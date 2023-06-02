@@ -1,0 +1,13 @@
+version: '2.16'
+
+services:
+
+  dev_db:
+    image: postgres_with_db
+    build: .
+    restart: on-failure
+    env_file:
+      - ./flashcard-server/.env
+    ports:
+      - 5432:5432
+
